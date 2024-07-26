@@ -29,6 +29,7 @@ export const Header = () => {
       </div>
       <div className="col-span-10 text-center">
         <input
+          autoComplete="searches"
           placeholder="Search"
           type="text"
           className="w-1/2 border-solid border border-gray-500 p-2 rounded-l-3xl px-4"

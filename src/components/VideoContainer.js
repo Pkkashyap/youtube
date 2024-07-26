@@ -20,7 +20,7 @@ export const VideoContainer = () => {
     <div className="px-10 py-5 flex flex-wrap">
       {videos.length != 0 &&
         videos.map((video) => (
-          <Link to={"/watch?v=" + video.id}>
+          <Link to={"/watch?v=" + video.id} key={video.id}>
             <VideoCard info={video} />
           </Link>
         ))}

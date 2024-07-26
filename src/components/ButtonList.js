@@ -17,8 +17,8 @@ const list = [
 export const ButtonList = () => {
   return (
     <div className="flex overflow-x-auto whitespace-nowrap p-2">
-      {list.map((ele) => (
-        <Button name={ele} />
+      {list.map((ele, index) => (
+        <Button key={index} name={ele} />
       ))}
     </div>
   );
