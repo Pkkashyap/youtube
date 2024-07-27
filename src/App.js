@@ -6,8 +6,6 @@ import store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { MainContainer } from "./components/MainContainer";
 import { WatchPage } from "./components/WatchPage.js";
-// import dotenv from "dotenv";
-// dotenv.config();
 
 const appRouter = createBrowserRouter([
   {
