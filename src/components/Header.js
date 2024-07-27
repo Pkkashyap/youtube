@@ -68,9 +68,6 @@ export const Header = () => {
         <div className="ml-[220px]">
           <input
             onFocus={() => setShowSuggestion(true)}
-            onBlur={() => {
-              setShowSuggestion(false);
-            }}
             onChange={(e) => setSearch(e.target.value)}
             autoComplete="searches"
             placeholder="Search"
@@ -78,14 +75,26 @@ export const Header = () => {
             type="text"
             className="w-1/2 border-solid border border-gray-500 p-2 rounded-l-3xl px-4"
           />
-          <button className="p-2 border border-gray-500 rounded-r-3xl px-5 py-2 text-black bg-gray-200">
-            🔍
-          </button>
+
+          <a href="/search">
+            <button className="p-2 border border-gray-500 rounded-r-3xl px-5 py-2 text-black bg-gray-200">
+              🔍
+            </button>
+          </a>
+
           {showSuggestion && (
             <div className="fixed py-2 px-5 bg-white w-2/6 shadow-lg rounded-lg border border-gray-100">
               <ul>
                 {searchSuggestion.map((ele) => (
-                  <li className="py-2 shadow-sm hover:bg-gray-100">🔍 {ele}</li>
+                  <li
+                    className="py-2 shadow-sm hover:bg-gray-100"
+                    onClick={() => {
+                      setShowSuggestion(false);
+                      setSearch(ele);
+                    }}
+                  >
+                    🔍 {ele}
+                  </li>
                 ))}
               </ul>
             </div>
