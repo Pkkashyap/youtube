@@ -30,7 +30,7 @@ export const Header = () => {
     if (search == "") {
       return;
     }
-    console.log("calling", search);
+    // console.log("calling", search);
     const data = await fetch(YOUTUBE_SEARCH_API + search);
     const res = await data.json();
     console.log(res[1]);
